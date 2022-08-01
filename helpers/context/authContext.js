@@ -27,14 +27,14 @@ const AuthContext = createContext();
 
     async function getUserLoggedIn() {
       try{
-        const usersloggedIn = await axios.get( Api + "/authentication/loggedIn",{withCredentials:true});
+        const usersloggedIn = await axios.get( Api + "authentication/loggedIn",{withCredentials:true});
         setUserLoggedIn(usersloggedIn.data);  
       } catch(err){}
     }
 
 async function getUserinfo() {
   try{
-  const usersloggedIn = await axios.get( Api + "/authentication/findUser",{withCredentials:true});
+  const usersloggedIn = await axios.get( Api + "authentication/findUser",{withCredentials:true});
   setFind(usersloggedIn.data);  
   }
   catch(err){}
@@ -43,7 +43,7 @@ async function getUserinfo() {
 useEffect(() => {
   async function getSession() {
     try{
-     await axios.get( Api + "/session",{withCredentials:true});
+     await axios.get( Api + "session",{withCredentials:true});
     } catch(err){}
     }
 getSession();
