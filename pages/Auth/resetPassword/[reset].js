@@ -6,7 +6,7 @@ import context from "../../../helpers/context/authContext"
 
 export async function getServerSideProps(context) {
 
-    const loggedIn = await fetch("http://localhost:27017/authentication/reset/"+ context.params.reset,{
+    const loggedIn = await fetch("https://dreamwebbackend.herokuapp.com//authentication/reset/"+ context.params.reset,{
       method:'GET',
       credentials: 'include',
     });

@@ -6,10 +6,10 @@ import Head from 'next/head';
 
 export async function getStaticProps(context) {
 
-  const loggedIn = await fetch("http://localhost:27017/allRoutes/real-state",{method:'GET'});
+  const loggedIn = await fetch("https://dreamwebbackend.herokuapp.com//allRoutes/real-state",{method:'GET'});
   const logged = await loggedIn.json();
   
-  const resSeo = await fetch('http://localhost:27017/allRoutes/Seo/realState');
+  const resSeo = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/Seo/realState');
   const jsonSeo = await resSeo.json();
 
   return {

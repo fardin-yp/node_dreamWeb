@@ -7,11 +7,11 @@ import Navbar from '../../../components/navbar/navbar';
 
 export async function getServerSideProps(context) {
 
-    const loggedIn = await fetch('http://localhost:27017/allRoutes/exclusiveForm',{method:'GET'});
+    const loggedIn = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/exclusiveForm',{method:'GET'});
     const logged = await loggedIn.json();
     const merchant = "d164f627-0400-4dc5-8da5-bc166ee30553";
 
-    const usersloggedIn = await fetch("http://localhost:27017/authentication/find",{
+    const usersloggedIn = await fetch("https://dreamwebbackend.herokuapp.com//authentication/find",{
         credentials: "include",
         headers:{
           cookie:context.req.cookies.token

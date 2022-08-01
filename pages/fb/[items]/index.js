@@ -10,17 +10,17 @@ export async function getServerSideProps(context) {
 
   const con = context.params.items;
   const reCaptcha = "6LfMd88dAAAAANh6pGI5JNg-q4m3gkwi8BlYKmHo" ;
-  const findPost = await fetch(`http://localhost:27017/allRoutes/fullPost/${con}`,{method:'GET'});
+  const findPost = await fetch(`https://dreamwebbackend.herokuapp.com//allRoutes/fullPost/${con}`,{method:'GET'});
   const json = await findPost.json();
 
-    const usersloggedIn = await fetch("http://localhost:27017/authentication/loggedIn",{
+    const usersloggedIn = await fetch("https://dreamwebbackend.herokuapp.com//authentication/loggedIn",{
       credentials: "include",
       headers:{
         cookie:context.req.cookies.token
       }
       
     });
-    const loggedIn = await fetch("http://localhost:27017/auth/loggedIn",{
+    const loggedIn = await fetch("https://dreamwebbackend.herokuapp.com//auth/loggedIn",{
       credentials: "include",
       headers:{
         cookie:context.req.cookies.Admin

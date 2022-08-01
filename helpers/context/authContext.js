@@ -9,11 +9,11 @@ const AuthContext = createContext();
     const [userLoggedIn , setUserLoggedIn] = useState(false);
     const [find , setFind] = useState(false);
     const socket = useRef();
-    const Api = "http://localhost:27017"
+    const Api = "https://dreamwebbackend.herokuapp.com/"
     const [users ,setUsers] = useState(null);
 
     useEffect(() => {
-      socket.current = io("ws://localhost:27017")
+      socket.current = io("ws://dreamwebbackend.herokuapp.com/")
      } , []);
  
     useEffect(() => {
