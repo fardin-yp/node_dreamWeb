@@ -11,10 +11,10 @@ import fast from "./fast.gif";
 
 export async function getStaticProps() {
 
-    const res = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/exclusive')
+    const res = await fetch('https://dreamwebbackend.herokuapp.com/allRoutes/exclusive')
     const json = await res.json();
 
-    const resSeo = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/seo/exclusive')
+    const resSeo = await fetch('https://dreamwebbackend.herokuapp.com/allRoutes/seo/exclusive')
     const jsonSeo = await resSeo.json();
   
     return {

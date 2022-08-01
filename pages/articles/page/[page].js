@@ -6,10 +6,10 @@ import { useRouter } from 'next/router'
 
 export async function getServerSideProps(context) {
     const con = context.params.page;
-    const res = await fetch(`https://dreamwebbackend.herokuapp.com//allRoutes/articles?page=${con}`)
+    const res = await fetch(`https://dreamwebbackend.herokuapp.com/allRoutes/articles?page=${con}`)
     const json = await res.json();
       
-  const resSeo = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/Seo/articles');
+  const resSeo = await fetch('https://dreamwebbackend.herokuapp.com/allRoutes/Seo/articles');
   const jsonSeo = await resSeo.json();
   
     return {

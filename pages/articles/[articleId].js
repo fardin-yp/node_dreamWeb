@@ -15,7 +15,7 @@ import Share from '../../helpers/share/Share';
 export async function getServerSideProps(context) {
   
   const con = context.params.articleId;
-  const res = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/fullArticle/' + con)
+  const res = await fetch('https://dreamwebbackend.herokuapp.com/allRoutes/fullArticle/' + con)
   const json = await res.json();
 
   const reCaptcha ="6Lc5scwdAAAAABhLprESfkYx74BP2mEGvh9Ck01p";
@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
       }
     }
   }
-  const loggedIn = await fetch("https://dreamwebbackend.herokuapp.com//auth/loggedIn",{
+  const loggedIn = await fetch("https://dreamwebbackend.herokuapp.com/auth/loggedIn",{
     credentials: "include",
     headers:{
       cookie:context.req.cookies.Admin

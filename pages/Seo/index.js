@@ -6,10 +6,10 @@ import context from "../../helpers/context/authContext";
 
 export async function getStaticProps(context) {
 
-    const res = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/articles')
+    const res = await fetch('https://dreamwebbackend.herokuapp.com/allRoutes/articles')
     const json = await res.json()
 
-    const resSeo = await fetch('https://dreamwebbackend.herokuapp.com//allRoutes/Seo/seo')
+    const resSeo = await fetch('https://dreamwebbackend.herokuapp.com/allRoutes/Seo/seo')
     const jsonSeo = await resSeo.json();
 
     return {

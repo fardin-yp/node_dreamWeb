@@ -7,10 +7,10 @@ export async function getServerSideProps(context) {
     const con = context.params.code;
     const merchant = "d164f627-0400-4dc5-8da5-bc166ee30553";
   
-    const loggedIn = await fetch(`https://dreamwebbackend.herokuapp.com//allRoutes/fullPost/${con}`,{method:'GET'});
+    const loggedIn = await fetch(`https://dreamwebbackend.herokuapp.com/allRoutes/fullPost/${con}`,{method:'GET'});
     const logged = await loggedIn.json();
 
-    const usersloggedIn = await fetch("https://dreamwebbackend.herokuapp.com//authentication/find",{
+    const usersloggedIn = await fetch("https://dreamwebbackend.herokuapp.com/authentication/find",{
         credentials: "include",
         headers:{
           cookie:context.req.cookies.token
