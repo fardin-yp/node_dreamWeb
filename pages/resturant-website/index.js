@@ -5,10 +5,10 @@ import Head from 'next/head';
 
 export async function getStaticProps() {
 
-  const getPosts = await fetch("http://localhost:27017/allRoutes/resturant",{method:'GET'});
+  const getPosts = await fetch("https://dreamweb0fardin.herokuapp.com/allRoutes/resturant",{method:'GET'});
   const json = await getPosts.json();
 
-  const resSeo = await fetch('http://localhost:27017/allRoutes/Seo/resturant');
+  const resSeo = await fetch('https://dreamweb0fardin.herokuapp.com/allRoutes/Seo/resturant');
   const jsonSeo = await resSeo.json();
 
   return {

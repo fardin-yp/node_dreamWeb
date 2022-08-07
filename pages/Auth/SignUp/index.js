@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
       }
     }
   
-    const usersloggedIn = await fetch("http://localhost:27017/authentication/find",{
+    const usersloggedIn = await fetch("https://dreamweb0fardin.herokuapp.com/authentication/find",{
       credentials: "include",
       headers:{
         cookie:context.req.cookies.token

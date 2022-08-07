@@ -12,10 +12,10 @@ export async function getStaticProps() {
 
 //   const json = process.env.INVIS_CAPTCHA || null
 const json = "6LfMd88dAAAAANh6pGI5JNg-q4m3gkwi8BlYKmHo"
-  const resSeo = await fetch('http://localhost:27017/allRoutes/Seo/contact');
+  const resSeo = await fetch('https://dreamweb0fardin.herokuapp.com/allRoutes/Seo/contact');
   const jsonSeo = await resSeo.json();
 
-  const getLinks = await fetch(`http://localhost:27017/allRoutes/Links`);
+  const getLinks = await fetch(`https://dreamweb0fardin.herokuapp.com/allRoutes/Links`);
   const links = await getLinks.json()
 
 

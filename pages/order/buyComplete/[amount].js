@@ -46,7 +46,7 @@ const Complete = ({Authority , Status ,merchant ,amount}) => {
         const purchase = JSON.parse(localStorage.getItem("object"));
       
         const post = { Authority , Status ,merchant ,amount:amount , purchase:purchase }
-        await axios.post('http://localhost:27017/sell/orderComplete', post ,{withCredentials:true}).then(res => {
+        await axios.post('https://dreamweb0fardin.herokuapp.com/sell/orderComplete', post ,{withCredentials:true}).then(res => {
             if(res.data.errMessage){
                 setErr(res.data)
                 setLoading(false)

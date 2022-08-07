@@ -34,7 +34,7 @@ export default function CKEditor ({setProperty}) {
            // plugins: [ Essentials ],
           ckfinder: {
               // The URL that the images are uploaded to.
-              uploadUrl: 'http://localhost:27017/upload', 
+              uploadUrl: 'https://dreamweb0fardin.herokuapp.com/upload', 
   
               // Enable the XMLHttpRequest.withCredentials property.
               withCredentials: true,

@@ -5,10 +5,10 @@ import context from '../../../../helpers/context/authContext';
 export async function getServerSideProps(context) {
 
     const id = context.params.id;
-    const res = await fetch(`http://localhost:27017/allRoutes/SeoService/${id}`)
+    const res = await fetch(`https://dreamweb0fardin.herokuapp.com/allRoutes/SeoService/${id}`)
     const json = await res.json();
     const merchant = "d164f627-0400-4dc5-8da5-bc166ee30553";
-    const usersloggedIn = await fetch("http://localhost:27017/authentication/find",{
+    const usersloggedIn = await fetch("https://dreamweb0fardin.herokuapp.com/authentication/find",{
         credentials: "include",
         headers:{
           cookie:context.req.cookies.token
@@ -56,7 +56,7 @@ const index = ({json ,user ,merchant}) => {
     const {Api} = useContext(context);
     
     const law = async () => {
-        await axios.get("http://localhost:27017/allRoutes/laws",{withCredentials:true}).then(res => {
+        await axios.get("https://dreamweb0fardin.herokuapp.com/allRoutes/laws",{withCredentials:true}).then(res => {
           setLaws(res.data[0].text)
         })
        }

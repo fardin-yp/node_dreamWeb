@@ -29,7 +29,7 @@ const MuiltiPartyMiddleware = multiparty({uploadDir:"../images"});
 server.use(express.json());
 
 server.use(cors({
-   origin:["http://localhost:27017"],
+   origin:["https://dreamweb0fardin.herokuapp.com/"],
    credentials:true,
    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
    }))
@@ -38,7 +38,7 @@ server.use(cors({
 
 const serverIo = https.createServer(server);
 const io = require("socket.io")(serverIo ,{
-cors:{origin:"http://localhost:27017"}
+cors:{origin:"https://dreamweb0fardin.herokuapp.com/"}
 })
 
 let OnlineUsers = []
@@ -135,7 +135,7 @@ server.post('/upload', MuiltiPartyMiddleware, (req, res) =>{
   }
 });
 const corsOptions = {
-   origin : "http://localhost:27017", // the origin of the requests - frontend address
+   origin : "https://dreamweb0fardin.herokuapp.com/", // the origin of the requests - frontend address
    credentials : true  
 }
 

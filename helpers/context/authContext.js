@@ -9,7 +9,7 @@ const AuthContext = createContext();
     const [userLoggedIn , setUserLoggedIn] = useState(false);
     const [find , setFind] = useState(false);
     const socket = useRef();
-    const Api = "http://localhost:27017/"
+    const Api = "https://dreamweb0fardin.herokuapp.com/"
     const [users ,setUsers] = useState(null);
 
     useEffect(() => {

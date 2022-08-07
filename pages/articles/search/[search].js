@@ -7,7 +7,7 @@ import Head from 'next/head';
 
 export async function getServerSideProps(context) {
 
-    const res = await fetch(`http://localhost:27017/allRoutes/allArticles`)
+    const res = await fetch(`https://dreamweb0fardin.herokuapp.com/allRoutes/allArticles`)
     const json = await res.json();
   
     return {
