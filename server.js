@@ -28,17 +28,9 @@ const MuiltiPartyMiddleware = multiparty({uploadDir:"../images"});
 
 server.use(express.json());
 
-server.use(cors({
-   origin:["https://dreamweb0fardin.herokuapp.com/"],
-   credentials:true,
-   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
-   }))
-
-
-
 const serverIo = https.createServer(server);
 const io = require("socket.io")(serverIo ,{
-cors:{origin:"https://dreamweb0fardin.herokuapp.com/"}
+cors:{origin:["https://dreamweb0fardin.herokuapp.com"]}
 })
 
 let OnlineUsers = []
@@ -134,10 +126,6 @@ server.post('/upload', MuiltiPartyMiddleware, (req, res) =>{
    })
   }
 });
-const corsOptions = {
-   origin : "https://dreamweb0fardin.herokuapp.com/", // the origin of the requests - frontend address
-   credentials : true  
-}
 
 server.use('/auth' ,require('./routes/admin/auth'));
 server.use('/authentication' ,require('./routes/usersAuth'));
@@ -147,9 +135,15 @@ server.use('/comment' ,require('./routes/comment'));
 server.use("/sell" ,require("./routes/sells"));
 
 
+server.post('*' ,(req, res) => handle(req, res));
 
+server.get('*' ,(req, res) => handle(req, res));
 
-server.all('*' ,cors(corsOptions)  ,(req, res) => handle(req, res));
+server.delete('*' ,(req, res) => handle(req, res));
+
+server.put('*' ,(req, res) => handle(req, res));
+
+server.all('*' ,(req, res) => handle(req, res));
 
 });
 
