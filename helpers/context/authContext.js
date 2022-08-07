@@ -9,11 +9,11 @@ const AuthContext = createContext();
     const [userLoggedIn , setUserLoggedIn] = useState(false);
     const [find , setFind] = useState(false);
     const socket = useRef();
-    const Api = "https://dreamwebbackend.herokuapp.com/"
+    const Api = "http://localhost:27017/"
     const [users ,setUsers] = useState(null);
 
     useEffect(() => {
-      socket.current = io("ws://dreamwebbackend.herokuapp.com/")
+      socket.current = io("ws://localhost:27017")
      } , []);
  
     useEffect(() => {
@@ -21,24 +21,21 @@ const AuthContext = createContext();
           setUsers(OnlineUsers)
        })
      },[]);
-
-     console.log(users)
-
-
-    async function getUserLoggedIn() {
+console.log(users)
+  async function getUserLoggedIn() {
       try{
         const usersloggedIn = await axios.get( Api + "authentication/loggedIn",{withCredentials:true});
         setUserLoggedIn(usersloggedIn.data);  
       } catch(err){}
     }
 
-async function getUserinfo() {
+  async function getUserinfo() {
   try{
   const usersloggedIn = await axios.get( Api + "authentication/findUser",{withCredentials:true});
   setFind(usersloggedIn.data);  
   }
   catch(err){}
-}
+  }
 
 useEffect(() => {
   async function getSession() {

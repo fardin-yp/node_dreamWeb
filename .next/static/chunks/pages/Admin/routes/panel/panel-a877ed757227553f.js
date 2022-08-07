@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6157],{8041:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/Admin/routes/panel/panel",function(){return u(5336)}])}},function(n){n.O(0,[5336,9774,2888,179],(function(){return _=8041,n(n.s=_);var _}));var _=n.O();_N_E=_}]);
